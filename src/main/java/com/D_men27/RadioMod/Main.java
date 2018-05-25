@@ -1,5 +1,6 @@
 package com.D_men27.RadioMod;
 
+import com.D_men27.RadioMod.init.ModItems;
 import com.D_men27.RadioMod.proxy.CommonProxy;
 
 import net.minecraftforge.fml.common.Mod;
@@ -20,11 +21,11 @@ public class Main {
 	public static final String COMMON_PROXY_CLASS = "com.D_men27.RadioMod.proxy.CommonProxy";
 	
 	@Instance
-	public static Main Inctance;
+	public static Main Instance;
 	
-	@SidedProxy(clientSide = Main.COMMON_PROXY_CLASS, serverSide = Main.COMMON_PROXY_CLASS)
+	@SidedProxy(clientSide = Main.CLIENT_PROXY_CLASS, serverSide = Main.COMMON_PROXY_CLASS)
 	public static CommonProxy proxy;
-	
+
 	@EventHandler
 	public static void PreInit(FMLPreInitializationEvent event) {
 		

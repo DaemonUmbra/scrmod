@@ -12,12 +12,12 @@ public class ItemBase extends Item implements IHasModel {
 
 	public ItemBase(String Name) {
 		setUnlocalizedName(Name);
-		setRegistryName(Name);
+		setRegistryName(Main.MOD_ID,Name); //Adding your Mod ID is required, otherwise Minecraft takes ownership of your item
 		setCreativeTab(CreativeTabs.MISC);
-		
+
 		ModItems.ITEMS.add(this);
 	}
-	
+
 	@Override
 	public void registerModels() {
 		Main.proxy.registerItemRenderer(this, 0,"inventory");
